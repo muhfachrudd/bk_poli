@@ -69,7 +69,14 @@ class JadwalPeriksaController extends Controller
     public function toggleStatus($id)
     {
         $jadwal = JadwalPeriksa::findOrFail($id);
-        $jadwal->status = !$jadwal->status;
+        if (!$jadwal->status) {
+            JadwalPeriksa::where('id_dokter', $jadwal->id_dokter)
+                ->where('id', '!=', $jadwal->id)
+                ->update(['status' => false]);
+            $jadwal->status = true;
+        } else {
+            $jadwal->status = false;
+        }
         $jadwal->save();
         return redirect()->route('dokter.jadwal.index')->with('status', 'jadwal-status-updated');
     }
