@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-400 dark:border-gray-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex items-center">
@@ -30,6 +30,9 @@
                     @elseif(Auth::user()->role == 'pasien')
                         <x-nav-link :href="route('pasien.dashboard')" :active="request()->routeIs('pasien.dashboard')">
                             {{ __('Dashboard') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('pasien.janji-periksa.index')" :active="request()->routeIs('pasien.janji-periksa.index')">
+                            {{ __('Janji Periksa') }}
                         </x-nav-link>
                     @endif
                 </div>
@@ -87,10 +90,19 @@
                 <x-responsive-nav-link :href="route('dokter.dashboard')" :active="request()->routeIs('dokter.dashboard')">
                     {{ __('Dashboard') }}
                 </x-responsive-nav-link>
+                 <x-nav-link :href="route('dokter.obat.index')" :active="request()->routeIs('dokter.obat.index')">
+                            {{ __('Obat') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('dokter.jadwal.index')" :active="request()->routeIs('dokter.jadwal.index')">
+                            {{ __('Jadwal Periksa') }}
+                        </x-nav-link>
             @elseif(Auth::user()->role == 'pasien')
                 <x-responsive-nav-link :href="route('pasien.dashboard')" :active="request()->routeIs('pasien.dashboard')">
                     {{ __('Dashboard') }}
                 </x-responsive-nav-link>
+                <x-nav-link :href="route('pasien.janji-periksa.index')" :active="request()->routeIs('pasien.janji-periksa.index')">
+                            {{ __('Janji Periksa') }}
+                        </x-nav-link>
             @endif
         </div>
 
