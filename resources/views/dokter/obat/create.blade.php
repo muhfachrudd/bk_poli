@@ -25,37 +25,22 @@
                             {{-- Nama Obat --}}
                             <div class="mb-3 form-group">
                                 <label for="namaObat">Nama Obat</label>
-                                <input
-                                    type="text"
-                                    class="rounded form-control"
-                                    id="namaObat"
-                                    name="nama_obat"
-                                    value="{{ old('nama_obat') }}"
-                                >
+                                <input type="text" class="rounded form-control" id="namaObat" name="nama_obat"
+                                    value="{{ old('nama_obat') }}">
                             </div>
 
                             {{-- Kemasan --}}
                             <div class="mb-3 form-group">
                                 <label for="kemasan">Kemasan</label>
-                                <input
-                                    type="text"
-                                    class="rounded form-control"
-                                    id="kemasan"
-                                    name="kemasan"
-                                    value="{{ old('kemasan') }}"
-                                >
+                                <input type="text" class="rounded form-control" id="kemasan" name="kemasan"
+                                    value="{{ old('kemasan') }}">
                             </div>
 
                             {{-- Harga --}}
                             <div class="mb-3 form-group">
                                 <label for="harga">Harga</label>
-                                <input
-                                    type="text"
-                                    class="rounded form-control"
-                                    id="harga"
-                                    name="harga"
-                                    value="{{ old('harga') }}"
-                                >
+                                <input type="text" class="rounded form-control" id="harga" name="harga"
+                                    value="{{ old('harga') }}">
                             </div>
 
                             {{-- Tombol Aksi --}}
